@@ -84,7 +84,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         user.setUserPassword(encryptPassword);
         user.setUsername(userAccount);
         user.setUserRole(0);
-        user.setAvatarUrl("http://usercenter.taim.site/default-avatar.png");
+        user.setAvatarUrl("http://usercenter.taim.site/default-avatar.jpg");
 //        user.setPlanetCode(planetCode);
         boolean saveResult = this.save(user);
         if (!saveResult) {
