@@ -35,7 +35,7 @@ public class UserController {
 
     @GetMapping("/test")
     public String test() {
-        return "sucess test!!!";
+        return "success test!!!";
     }
 
     @PostMapping("/register")
@@ -104,7 +104,7 @@ public class UserController {
             queryWrapper.like("username", username);
         }
         List<User> userList = userService.list(queryWrapper);
-        List<User> list = userList.stream().map(user -> userService.getSafetyUser(user)).collect(Collectors.toList());
+        List<User> list = userList.stream().map(userService::getSafetyUser).collect(Collectors.toList());
         return ResultUtils.success(list);
     }
 
